@@ -1,17 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
-  name: guestbook
+  name: webapp
   namespace: argocd
-spec: 
-  destination: 
-    namespace: guestbook
+spec:
+  destination:
+    namespace: webapp
     server: "https://kubernetes.default.svc"
   project: default
   source: 
-    path: guestbook
-    repoURL: "https://github.com/mabusaa/argocd-example-apps.git"
-    targetRevision: master
+    path: helm/webapp
+    repoURL: "https://github.com/aadilraza339/udemy-argocd-course-webapp-config.git"
+    targetRevision: main
   syncPolicy:
+    automated: {}
     syncOptions:
       - CreateNamespace=true
