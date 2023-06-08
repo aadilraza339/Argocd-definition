@@ -67,7 +67,7 @@ Output </br>
 
 ### Create a project with name-space restiction: [video](https://drive.google.com/file/d/1CbLplrXIAJnZITXqolnao7aIsfew-t0i/view?usp=drive_link) 
 
-### Create a project with role[Video](https://drive.google.com/file/d/1_8mOwrGCyKD3FsjOadzzishNrTCDype7/view?usp=drive_link)
+### Create a project with role. [Video](https://drive.google.com/file/d/1_8mOwrGCyKD3FsjOadzzishNrTCDype7/view?usp=drive_link)
 
 Create role
 ```
