@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-with-role-new
+  namespace: argocd
+spec:
+  description: project-with-role description
+  sourceRepos:
+  - '*'
+
+  destinations:
+  - namespace: '*'
+    server: '*'
+
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+
+  roles:
+  - name: ci-role
+    description: Sync privileges for project-with-role
+    policies:
+    - p, proj:project-with-role:ci-role, applications, sync, project-with-role/*, allow
+
+    # argocd proj role create-token project-with-role ci-role
+    # argocd app delete gestbook-dev-project --auth-token 

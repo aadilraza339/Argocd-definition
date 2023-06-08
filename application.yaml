@@ -1,19 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-metadata:
-  name: webapp  # Name of the application
-  namespace: argocd  # Namespace where the application resides
-spec:
-  destination:
-    namespace: webapp  # Namespace where the application will be deployed
-    server: "https://kubernetes.default.svc"  # Kubernetes server URL
-  project: default  # Project associated with the application
-  source:
-    path: helm/webapp  # Path to the application source code within the repository
-    repoURL: "https://github.com/aadilraza339/udemy-argocd-course-webapp-config.git"  # URL of the repository containing the application source code
-    targetRevision: main  # Git branch or revision to deploy
+metadata: 
+  name: guestbook-demo-project-new
+  namespace: argocd
+spec: 
+  destination: 
+    namespace: guestbook-demo-project
+    server: "https://kubernetes.default.svc"
+  project: demo-project-test
+  source: 
+    path: guestbook
+    repoURL: "https://github.com/mabusaa/argocd-example-apps.git"
+    targetRevision: master
   syncPolicy:
-    automated: {}  # Automatically sync the application
     syncOptions:
-      - CreateNamespace=true  # Creates the namespace if it doesn't exist
-      # Add more sync options here as needed
+      - CreateNamespace=true

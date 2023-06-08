@@ -5,7 +5,7 @@ items:
   metadata:
     creationTimestamp: "2023-06-01T15:34:54Z"
     generation: 1
-    name: demo-project
+    name: demo-project-test
     namespace: argocd
   spec:
     clusterResourceWhitelist:
